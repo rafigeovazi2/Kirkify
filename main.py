@@ -1,15 +1,3 @@
-"""
-Kirkify your face big dawg
-======================================
-Detects your face via webcam, then gradually fades it into our Charlie Kirk
-over 5 seconds. After completion, kirk's face stays locked onto yours,
-tracking all facial expressions (blinking, open mouth, etc).
-
-Controls:
-  Q / ESC  - Quit
-  R        - Reset the effect
-"""
-
 import cv2
 import numpy as np
 import time
@@ -404,7 +392,7 @@ def main():
                 if fade_done:
                     draw_status(output, "Kirkified.", (0, 255, 100))
                 else:
-                    draw_status(output, "Processing..", (0, 230, 255), progress=alpha)
+                    draw_status(output, "Kirkifying..", (0, 230, 255), progress=alpha)
 
             else:
                 if not face_detected:
@@ -413,7 +401,7 @@ def main():
                     # Keep showing last status even if face lost briefly
                     draw_status(output, "Kirkified.", (0, 255, 100))
 
-            cv2.imshow("Diddy's Oil Cabinet", output)
+            cv2.imshow("WE ARE CHARLIE KIRK", output)
 
             key = cv2.waitKey(1) & 0xFF
             if key in (ord("q"), 27):
